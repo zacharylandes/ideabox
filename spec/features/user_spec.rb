@@ -40,9 +40,8 @@ describe "User" do
   expect(page).to have_content("Welcome, funbucket13!")
   expect(page).to have_content("Logout")
 
-end
-end
-
+    end
+  end
 end
 
 

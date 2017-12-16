@@ -12,13 +12,18 @@ class UsersController < ApplicationController
     render :new
   end
 end
+
   def show
     @user = User.find(params[:id])
+    @idea = @user.ideas.new
+    @category = Category.all
+    @ideas =  Idea.where(:user_id => @user.id)
+    # byebug
   end
 
 private
 
-def user_params
-  params.require(:user).permit(:username, :password)
-end
+  def user_params
+    params.require(:user).permit(:username, :password)
+  end
 end

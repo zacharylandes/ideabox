@@ -21,9 +21,23 @@ describe "User visits categories index page" do
 
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
     visit admin_categories_path
-    save_and_open_page
     expect(page).to_not have_content("Admin Categories")
     expect(page).to have_content("The page you were looking for doesn't exist.")
+    end
   end
-end
+  it 'does not allow default user to see admin categories index' do
+    user = User.create(username: "fern@gully.com",
+                       password: "password",
+                       role: 1)
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+    visit  new_admin_category_path
+    fill_in "category[name]", with: "humor"
+
+    click_on "Create Category"
+
+
+      expect(current_path).to eq(admin_categories_path)
+    expect(page).to have_content("humor")
+    end
+
 end

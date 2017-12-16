@@ -1,2 +1,18 @@
 <h1>Welcome, <%= current_user.username %>!</h1>
-  <%= link_to "Logout", root_path %>
+<%= link_to "Logout", root_path %>
+
+<h1>What's your idea?</h1>
+<%= form_for [@user,@idea] do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :description %>
+  <%= f.text_field  :description %>
+  <%= f.label :category %>
+  <%= f.select :category_id, options_for_select( @category.collect{ |category| ["#{category.name}", category.id] } ), class: 'form-control' %>
+  <%= f.submit %>
+<% end %>
+
+<% @ideas.each do |idea|   %>
+<%= idea.title  %>
+<%= idea.description  %>
+<% end %>
