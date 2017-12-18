@@ -1,0 +1,11 @@
+<%= form_for [@user,@idea] do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :description %>
+  <%= f.text_field  :description %>
+  <%= f.label :category %>
+  <%= f.select :category_id, options_for_select( @category.collect{ |category| ["#{category.name}", category.id] } ), class: 'form-control' %>
+  <%= f.label :image %>
+  <%= f.select :image_id, options_for_select( @image.collect{ |image| ["#{image.name}", image.id] } ), class: 'form-control' %>
+  <%= f.submit %>
+<% end %>

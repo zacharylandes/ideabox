@@ -9,10 +9,24 @@
   <%= f.text_field  :description %>
   <%= f.label :category %>
   <%= f.select :category_id, options_for_select( @category.collect{ |category| ["#{category.name}", category.id] } ), class: 'form-control' %>
+  <%= f.label :image %>
+  <%= f.select :images, options_for_select( @image.collect{ |image| ["#{image.image}", image.id] } ), class: 'form-control' %>
   <%= f.submit %>
 <% end %>
 
+<div class = "idea-list">
+  <% if !@ideas.nil? %>
 <% @ideas.each do |idea|   %>
-<%= idea.title  %>
-<%= idea.description  %>
+<p><%= idea.title  %></p>
+<p><%= idea.description  %></p>
+<p><%= idea.category.name  %></p>
+  <strong>Image:</strong>
+  <% if @img %>
+  <% byebug %>
+  <%= image_tag @img.image.url %>
+  <% end %>
+</div>
+<li class =""><%= link_to "Edit", edit_user_idea_path(@user, idea) %></li>
+<li class =""> <%= link_to "Delete", user_idea_path(@user, idea), method: "delete" %></li>
+<% end %>
 <% end %>

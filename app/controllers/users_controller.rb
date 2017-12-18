@@ -14,11 +14,15 @@ class UsersController < ApplicationController
 end
 
   def show
+    @image = Image.all
     @user = User.find(params[:id])
     @idea = @user.ideas.new
     @category = Category.all
     @ideas =  Idea.where(:user_id => @user.id)
-    # byebug
+    if Image.find(params[:idea][:images])
+      @img = Image.find(params[:idea][:images])
+    end
+    # @img = Image.find(params[:idea][:images])
   end
 
 private

@@ -1,0 +1,13 @@
+
+  <%= @images.each do |image| %>
+  <strong>Name:</strong>
+  <%= image.name %>
+</p>
+<p>
+  <strong>Image:</strong>
+  <%= image_tag image.image.url %>
+  <%end%>
+</p>
+<p>
+  
+</p>

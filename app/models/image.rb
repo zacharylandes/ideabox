@@ -1,6 +1,5 @@
 class Image < ApplicationRecord
-  belongs_to :user
-
-  has_and_belongs_to_many :ideas
-
+  mount_uploader :image, ImageUploader
+  belongs_to :user, optional: true
+  has_and_belongs_to_many :ideas, :dependent => :destroy,  :join_table => :ideas_images
 end
