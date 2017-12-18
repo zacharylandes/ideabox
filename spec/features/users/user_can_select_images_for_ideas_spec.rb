@@ -23,8 +23,8 @@ describe "User" do
 
   fill_in 'idea[title]', with: "New Idea"
   fill_in 'idea[description]', with: 'Sexy Daipers'
-  save_and_open_page
-   select('Fun', :from => 'idea[id]')
+  # save_and_open_page
+   # select('Fun', :from => 'idea[id]')
   click_on 'Create Idea'
 
   expect(current_path).to eq(user_path(user))

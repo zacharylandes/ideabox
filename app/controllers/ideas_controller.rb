@@ -9,16 +9,11 @@ class IdeasController  < ApplicationController
     end
 
     def create
-      @image = Image.all
-      @user = User.find(params[:user_id])
-      idea = @user.ideas.new(idea_params)
-      if Image.find(params[:idea][:images])
-        @img = Image.find(params[:idea][:images])
-        # byebug
-      end
-      if idea.save
-        redirect_to user_path(@user)
-      end
+      ip = idea_params
+      ip[:image_ids].shift
+      user = User.find(params[:user_id])
+      idea = user.ideas.create(ip)
+        redirect_to user_path(user)
     end
 
     def edit
@@ -45,7 +40,7 @@ class IdeasController  < ApplicationController
     end
 
     def idea_params
-      params.require(:idea).permit(:title, :description, :category_id, {:images =>[]})
+      params.require(:idea).permit(:title, :description, :category_id, {:image_ids =>[]})
     end
 
   end

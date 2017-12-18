@@ -19,7 +19,7 @@ describe "User visits categories index page" do
                        password: "password",
                        role: 0)
 
-    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+    allow_any_instance_of(ApplicationController).to not_receive(:current_user).and_return(user)
     visit admin_categories_path
     expect(page).to_not have_content("Admin Categories")
     expect(page).to have_content("The page you were looking for doesn't exist.")
