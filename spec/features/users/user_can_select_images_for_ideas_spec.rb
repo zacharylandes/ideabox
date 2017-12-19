@@ -3,7 +3,7 @@ describe "User" do
   describe '.methods' do
     it 'signs up ' do
 
-  user = User.create(username: "funbucket13", password: "test", role:1)
+  user = User.create(username: "funbucket13", password: "test", role:0)
   humor = user.categories.create!(name:"humor")
   drama = user.categories.create!(name:"drama")
 

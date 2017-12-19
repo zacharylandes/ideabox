@@ -3,7 +3,7 @@ describe "User" do
   context 'user logs in' do
     it 'selects an image from available images' do
 
-      user = User.create(username: "funbucket13", password: "test", role:1)
+      user = User.create(username: "funbucket13", password: "test", role:0)
       humor = user.categories.create!(name:"humor")
       drama = user.categories.create!(name:"drama")
       idea = user.ideas.create(title:'idea',category_id: humor.id,user_id: user.id)

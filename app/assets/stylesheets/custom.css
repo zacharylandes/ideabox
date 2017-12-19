@@ -1,6 +1,6 @@
-body {
+/* body {
   background-image: url('polygon.png');
-  background-size:   100%;                      /* <------ */
+  background-size:   100%;                     
   font-family: 'Fjalla One', sans-serif;
 }
 

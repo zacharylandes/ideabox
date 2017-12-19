@@ -253,18 +253,23 @@ nav{
 
 }
 .form-container{
-  margin: 40px;
+  margin: 0px 40px;
   display: flex;
+  width: 200px;
   flex-direction: column;
   align-items: baseline;}
+
 img{
 
 width:300px;
 
 }
+.cat-show{
+  margin:20px 0px;
+}
 .categories-show, .welcome{
-  margin: 40px;
-  padding: 30px;
+  margin:0px 40px;
+  padding: 0px 30px;
   width: 200px;
 
   display: flex;

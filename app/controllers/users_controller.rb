@@ -14,8 +14,11 @@ class UsersController < ApplicationController
   end
 
   def show
+
     @images = Image.all
+    # if User.find(params[:id]).logged_in
     @user = User.find(params[:id])
+  # end
     @idea = @user.ideas.new
     @category = Category.all
     @ideas =  Idea.where(:user_id => @user.id)

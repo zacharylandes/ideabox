@@ -4,9 +4,12 @@
 
 <div class= "container">
 <div class = "form-container">
-  <h3>Make a category here</h3>
+  <h3>Make a category </h3>
 <%= render partial: "form" %>
-  <h3>Upload an image here</h3>
+</div>
+<div class = "form-container">
+
+  <h3>Upload an image </h3>
 
 <%= render partial: "images_form" %>
 </div>
@@ -24,7 +27,7 @@
 <% @images.each do |image| %>
 <div class= "image-show">
   <P><%= image.name %></P>
-  <%= image_tag image.image.url %>
+  <%= image_tag image.image.url unless image.image.url.nil? %>
   <%=link_to "Delete", admin_image_path(image) , method: "delete" %></li>
 </div >
 <%end%>
