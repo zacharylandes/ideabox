@@ -1,53 +1,32 @@
-<h1>Admin Categories</h1>
+<nav>
+  <h1>Welcome to the secret admin place</h1>
+</nav>
 
-
-<h3>Make a category here</h3>
-
+<div class= "container">
+<div class = "form-container">
+  <h3>Make a category here</h3>
 <%= render partial: "form" %>
+  <h3>Upload an image here</h3>
 
+<%= render partial: "images_form" %>
+</div>
+<div class= "categories-show">
+  <h3>Categories</h3>
 <%@categories.each do |category|%>
-<%=category.name%>
-<li class =""><%= link_to "Edit", edit_admin_category_path(category) %></li>
-<li class =""> <%= link_to "Delete", admin_category_path(category) , method: "delete" %></li>
+<div class= "cat-show">
+  <p><%=category.name%></p>
+  <%= link_to "Edit", edit_admin_category_path(category) %>
+  <%= link_to "Delete", admin_category_path(category) , method: "delete" %>
+</div>
 <% end %>
-
-<%= form_for [:admin, @image], html: { multipart: true } do |f| %>
-  <% if @image.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@image.errors.count, "error") %> prohibited this image from being saved:</h2>
-
-      <ul>
-      <% @image.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :image %><br>
-    <%= f.file_field :image %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
-
-  <%= @images.each do |image| %>
-  <strong>Name:</strong>
-  <%= image.name %>
-</p>
-<p>
-  <strong>Image:</strong>
+</div>
+<div class= "images-show">
+<% @images.each do |image| %>
+<div class= "image-show">
+  <P><%= image.name %></P>
   <%= image_tag image.image.url %>
-  <%= link_to "Delete", admin_image_path(image) , method: "delete" %></li>
-  <%end%>
-</p>
-<p>
-
-</p>
+  <%=link_to "Delete", admin_image_path(image) , method: "delete" %></li>
+</div >
+<%end%>
+</div>
+</div>

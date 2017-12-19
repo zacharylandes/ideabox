@@ -4,14 +4,14 @@ class UsersController < ApplicationController
   end
 
   def create
-  @user = User.create(user_params)
-  if @user.save
-    session[:user_id] = @user.id
-    redirect_to user_path(@user)
-  else
-    render :new
+    @user = User.create(user_params)
+    if @user.save
+      session[:user_id] = @user.id
+      redirect_to user_path(@user)
+    else
+      render :new
+    end
   end
-end
 
   def show
     @images = Image.all
@@ -19,10 +19,6 @@ end
     @idea = @user.ideas.new
     @category = Category.all
     @ideas =  Idea.where(:user_id => @user.id)
-    # if Image.find(params[:idea][:images])
-    #   # @img = Image.find(params[:idea][:images])
-    # end
-    # @img = Image.find(params[:idea][:images])
   end
 
 private

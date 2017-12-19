@@ -17,9 +17,11 @@ class IdeasController  < ApplicationController
     end
 
     def edit
+      @images = Image.all
       @category = Category.all
       @user = User.find(params[:user_id])
       @idea = Idea.find(params[:id])
+
     end
 
     def update
