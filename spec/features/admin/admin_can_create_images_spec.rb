@@ -1,8 +1,8 @@
 require "rails_helper"
 
 describe "admin can create images " do
-  context "as admin" do
-    it "allows admin to see all images" do
+  context "when a user is an admin" do
+    it "allows admin to see add an image" do
 	   admin = User.create(username: "penelope",
                         password: "boom",
                         role: 1)
@@ -15,7 +15,6 @@ describe "admin can create images " do
 
       expect(current_path).to eq(admin_categories_path)
       page.find('img')['src'].should have_content 'polygon.png'
-
     end
   end
 end
