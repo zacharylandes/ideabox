@@ -2,11 +2,12 @@
         <p><%= f.label :title %></p>
         <p><%= f.text_field :title %></p>
         <p><%= f.label :description %></p>
-        <p><%= f.text_field  :description %></p>
+        <p><%= f.text_area  :description %></p>
         <p><%= f.label :category %></p>
         <p><%= f.select :category_id, options_for_select( @category.collect{ |category| ["#{category.name}", category.id] } ), class: 'form-control' %></p>
         <p><%= f.label :image %></p>
         <p><%= f.collection_select :image_ids, @images,:id,:name,{prompt: true}, {:multiple => true } %></p>
+        <p><%= f.label :Gif %></p>
         <p><%= f.collection_select :gif_ids, @gifs,:id,:name,{prompt: true}, {:multiple => true } %></p>
         <p><%= f.submit %></p>
       <% end %>

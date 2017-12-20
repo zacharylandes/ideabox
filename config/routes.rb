@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
 
-    namespace :admin do
+  namespace :admin do
    resources :categories
    resources :gifs
    resources :images

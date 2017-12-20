@@ -1,38 +1,40 @@
 <nav>
-<h1>Welcome, <%= current_user.username %>!</h1>
+  <h1>Welcome, <%= current_user.username %>!</h1>
+  <%= link_to "Logout", logout_path, class: "logout" %>
 </nav>
-<%= link_to "Logout", logout_path %>
-
-
-
-
-
-
 
 <div class="user-container">
-      <div  class="idea-form">
-      <h2>What's your idea?</h2>
-        <%= render partial: "form" %>
-      </div>
-
+  <div  class="idea-form">
+   <h4>New idea?</h4>
+      <%= render partial: "form" %>
+  </div>
+  <div class="idea-container">
+    <h4>Your Ideas </h4>
     <% if !@ideas.nil? %>
       <% @ideas.each do |idea| %>
-      <div class= "cat-show">
-        <p> Idea: <%= idea.title  %></p>
-        <p> <%= idea.description  %></p>
-        <p>Category: <%= idea.category.name  %></p>
-        <p><%= link_to "Edit", edit_user_idea_path(@user, idea) %></p>
-           <%= link_to "Delete", user_idea_path(@user, idea), method: "delete" %>
-          <%idea.images.each do |image| %>
-            <p>  <%= image.name %></p>
-              <%=image_tag image.image.url unless image.image.url.nil? %>
-          <% end %>
-          <%idea.gifs.each do |gif| %>
-            <p>  <%= gif.name %></p>
-              <img src= "<%=gif.url%>">
-          <% end %>
-      </div>
+       <div class= "idea-show">
+        <div class = "idea-text">
+          <p> Idea: <%= idea.title  %></p>
+          <p> <%= idea.description  %></p>
+          <p>Category: <%= idea.category.name  %></p>
+          <p><%= link_to "Edit", edit_user_idea_path(@user, idea) %></p>
+          <p><%= link_to "Delete", user_idea_path(@user, idea), method: "delete" %></p>
+        </div>
+        <%idea.images.each do |image| %>
+          <div class = "idea-media">
+            <p><%= image.name %></p>
+            <p> <%=image_tag image.image.url unless image.image.url.nil? %></p>
+          </div>
+        <% end %>
+        <%idea.gifs.each do |gif| %>
+          <div class = "idea-media">
+            <p><%= gif.name %></p>
+            <img src= "<%=gif.url%>">
+          </div>
+        <% end %>
+       </div>
       <% end %>
-    </div>
-      <% end %>
-    </div>
+  </div>
+    <% end %>
+</div>
+<!-- </div> -->

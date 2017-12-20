@@ -1,16 +1,24 @@
 <nav>
-
-  <h1>Welcome to the Idea Box Place</h1>
+  <h1>Welcome to Idea Box </h1>
+  <div id= "welcome-container">
+    <%= link_to "Sign Up", new_user_path %>
+    <%= link_to "Login", login_path %>
+  </div>
   <h4>Ideas cooked fresh</h4>
-
 </nav>
-<div id="welcome-container">
-
-<div class= "welcome">
-<%= link_to "Sign Up to Be a User", new_user_path %>
+<div class="intro-div">
+  <span><i class="fa fa-lightbulb-o fa-3x"></i></span>
+  <p> Make ideas</p>
 </div>
-
-<div class= "welcome">
-<%= link_to "I already have an account", login_path %>
+<div class="intro-div">
+  <i class="fa fa-camera-retro fa-2x" aria-hidden="true" ></i>
+  <p> Upload Images</p><br/>
 </div>
+<div class="intro-div">
+  <i class="fa fa-smile-o fa-2x" aria-hidden="true"></i>
+  <p> Upload Gifs too</p><br/>
+</div>
+<div class="intro-div">
+  <i class="fa fa-shield  fa-3x" aria-hidden="true"></i>
+  <p>Securely</p><br/>
 </div>

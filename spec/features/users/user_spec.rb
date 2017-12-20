@@ -4,7 +4,7 @@ describe User do
     it 'signs up ' do
       visit '/'
 
-  click_on "Sign Up to Be a User"
+  click_on "Sign Up"
 
   expect(current_path).to eq(new_user_path)
   fill_in "user[username]", with: "funbucket13"
@@ -22,7 +22,7 @@ describe User do
      user = create(:user)
     visit '/'
 
-    click_on "I already have an account"
+    click_on "Login"
 
     expect(current_path).to eq(login_path)
 

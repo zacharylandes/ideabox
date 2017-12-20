@@ -1,4 +1,12 @@
+<nav>
 <h1>Update <%= @category.name %> here</h1>
-<div class= "categories-show">
-<%= render partial: "form" %>
-</div>
+</nav>
+
+<%= form_for [:admin, @category]  do |f| %>
+<div class="idea-form">
+  <p><%= f.label :name %></p>
+  <P><%= f.text_field :name %></p>
+  <P><%= f.submit %></p>
+  </div>
+<% end %>
+<!-- </div> -->

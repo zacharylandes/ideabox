@@ -12,7 +12,7 @@ describe "User" do
 
       visit '/'
 
-      click_on "I already have an account"
+      click_on "Login"
 
       expect(current_path).to eq(login_path)
 
@@ -22,7 +22,7 @@ describe "User" do
       click_on "Log In"
 
       expect(current_path).to eq(user_path(user))
-      expect(page).to have_content("What's your idea?")
+      expect(page).to have_content("New idea?")
 
       fill_in 'idea[title]', with: "New Idea"
       fill_in 'idea[description]', with: 'Sexy Daipers'

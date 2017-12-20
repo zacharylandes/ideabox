@@ -1,15 +1,14 @@
 <nav>
   <h1>Login</h1>
+  <%= link_to "Back", logout_path, class: "logout" %>
 </nav>
 <div class="idea-form">
 
 <%= form_tag login_path do %>
   <%= label_tag :username %>
   <%= text_field_tag :username %>
-
   <%= label_tag :password %>
   <%= password_field_tag :password %>
-
   <%= submit_tag "Log In", class: "btn btn-large btn-primary" %>
 <% end %>
 </div>
