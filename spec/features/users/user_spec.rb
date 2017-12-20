@@ -19,8 +19,7 @@ describe User do
   describe 'already logged in' do
     it 'is already logged in' do
 
-    user = User.create(username: "funbucket13", password: "test")
-
+     user = create(:user)
     visit '/'
 
     click_on "I already have an account"
@@ -34,23 +33,19 @@ describe User do
 
     expect(current_path).to eq(user_path(user))
 
-    expect(page).to have_content("Welcome, funbucket13!")
+    expect(page).to have_content("Welcome, username!")
     expect(page).to have_content("Logout")
     end
 
     it "can be created as an admin" do
-      user = User.create(username: "penelope",
-                         password: "boom",
-                         role: 1)
+      user = create(:user, role:1)
 
       expect(user.role).to eq("admin")
       expect(user.admin?).to be_truthy
     end
 
     it "can be created as a default user" do
-      user = User.create(username: "sammy",
-                         password: "pass",
-                         role: 0)
+      user = create(:user)
 
       expect(user.role).to eq("default")
       expect(user.default?).to be_truthy

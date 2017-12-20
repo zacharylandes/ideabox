@@ -4,11 +4,10 @@
 </nav>
 
 
-<!-- <div class= "container"> -->
   <h5>Make a category </h5>
   <%= render partial: "form" %>
+  <h5>Categories ></h5>
   <div class = "cat-contain">
-      <h5>Categories</h5>
     <div class= "categories-show">
       <%@categories.each do |category|%>
         <div class= "cat-show">
@@ -23,8 +22,10 @@
   <%= render partial: "images_form" %>
 
 
+  <h5>Images ></h5>
   <div class = "cat-contain">
-  <h5>Images</h5>
+    <div class = "show-title">
+</div>
     <div class= "categories-show">
       <% @images.each do |image| %>
         <div class= "image-show">
@@ -37,8 +38,8 @@
   </div>
 <h5>Upload a gif </h5>
 <%= render partial: "gifs_form" %>
+<h5>Giphs ></h5>
 <div class = "cat-contain">
-<h5>Giphs!</h5>
   <div class= "categories-show">
     <%@gifs.each do |gif| %>
       <div class= "image-show">

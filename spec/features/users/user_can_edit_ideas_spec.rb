@@ -3,9 +3,7 @@ require "rails_helper"
 describe "User visits user show  page" do
 
   it 'allows user  to edit ideas ' do
-    user = User.create(username: "fern@gully.com",
-                        password: "password",
-                        role: 0)
+     user = create(:user)
     humor = user.categories.create!(name:"humor")
     drama = user.categories.create!(name:"drama")
     idea = user.ideas.create(title:'idea',category_id: humor.id,user_id: user.id)
