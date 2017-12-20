@@ -3,7 +3,7 @@ body {
   font-family: 'Lora', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   position: relative;
   width: 100%;
-  background-image: url("intro-bg.jpg") no-repeat center center fixed;
+  background: url("https://scontent-ort2-1.xx.fbcdn.net/v/t31.0-8/25487223_10103306734574268_3693740156968773192_o.jpg?oh=bb17d840ebfecf26d4b4122ba310101a&oe=5AD47198") no-repeat center center fixed;
   color: white;}
 
 html {
