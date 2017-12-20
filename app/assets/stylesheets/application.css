@@ -49,6 +49,10 @@ p, a {
   align-items:center;
   border-bottom: 1px solid white;
 }
+.img{
+  width:150px;
+  height: 150px;
+}
 img{
   width: 200px;
   height: 250px;
@@ -124,12 +128,10 @@ text-align-last:center;
   margin-bottom: 40px;
 
 }
-.user-container{
 
-}
-.idea-form, #new-idea{
+.new-idea-form,.idea-form, #new-idea{
   margin-left: 20px;
-  padding: 20px;
+  padding-left: 20px;
   width: 200px;
 }
 .idea-form label, .idea-form input{
