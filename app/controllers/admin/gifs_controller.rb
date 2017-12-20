@@ -29,7 +29,7 @@ class Admin::GifsController < ApplicationController
 private
 
   def gif_params
-      params.require(:gif).permit(:name)
+      params.require(:gif).permit(:name,)
   end
 
   end
