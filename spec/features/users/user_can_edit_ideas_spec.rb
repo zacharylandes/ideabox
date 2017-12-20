@@ -19,7 +19,6 @@ describe "User visits user show  page" do
       fill_in 'idea[description]', with: 'Sexy Daipers'
 
       select "drama", :from => "idea[category_id]"
-      select "first", :from => "idea[image_ids][]"
 
     click_on 'Edit'
 
@@ -28,7 +27,6 @@ describe "User visits user show  page" do
     fill_in 'idea[description]', with: 'Sexy Daipers'
 
     select "drama", :from => "idea[category_id]"
-    select "second", :from => "idea[image_ids][]"
 
     click_on "Update Idea"
 

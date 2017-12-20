@@ -20,9 +20,12 @@
             <p>  <%= image.name %></p>
               <%=image_tag image.image.url unless image.image.url.nil? %>
           <% end %>
+          <%idea.gifs.each do |gif| %>
+            <p>  <%= gif.name %></p>
+              <img src= "<%=gif.url%>">
+          <% end %>
       </div>
       <% end %>
     </div>
       <% end %>
-
     </div>

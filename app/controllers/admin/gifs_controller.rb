@@ -20,9 +20,9 @@ class Admin::GifsController < ApplicationController
   # end
 
   def destroy
-    @gif= Gi.find(params[:id])
-    @image.destroy
-      flash[:success] = "image deleted!"
+    @gif= Gif.find(params[:id])
+    @gif.destroy
+      flash[:success] = "gif deleted!"
       redirect_to admin_categories_path
   end
 

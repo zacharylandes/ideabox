@@ -6,43 +6,45 @@
 
 <!-- <div class= "container"> -->
   <h5>Make a category </h5>
-<%= render partial: "form" %>
-<div class = "cat-contain">
-  <h5>Categories</h5>
-<div class= "categories-show">
-  <%@categories.each do |category|%>
-  <div class= "cat-show">
-    <p><%=category.name%></p>
-    <%= link_to "Edit", edit_admin_category_path(category) %>
-    <%= link_to "Delete", admin_category_path(category) , method: "delete" %>
+  <%= render partial: "form" %>
+  <div class = "cat-contain">
+      <h5>Categories</h5>
+    <div class= "categories-show">
+      <%@categories.each do |category|%>
+        <div class= "cat-show">
+          <p><%=category.name%></p>
+          <%= link_to "Edit", edit_admin_category_path(category) %>
+          <%= link_to "Delete", admin_category_path(category) , method: "delete" %>
+        </div>
+      <% end %>
+    </div>
   </div>
-  <% end %>
-</div>
-</div>
   <h5>Upload an image </h5>
-<%= render partial: "images_form" %>
+  <%= render partial: "images_form" %>
 
 
-<div class = "cat-contain">
-    <h5>Images</h5>
-<div class= "images-show">
-<% @images.each do |image| %>
-<div class= "image-show">
-  <P><%= image.name %></P>
-  <p><%= image_tag image.image.url unless image.image.url.nil? %></p>
-  <%=link_to "Delete", admin_image_path(image) , method: "delete" %></li>
-</div >
-<%end%>
-</div>
-</div>
+  <div class = "cat-contain">
+  <h5>Images</h5>
+    <div class= "categories-show">
+      <% @images.each do |image| %>
+        <div class= "image-show">
+          <P><%= image.name %></P>
+          <p><%= image_tag image.image.url unless image.image.url.nil? %></p>
+          <p><%=link_to "Delete", admin_image_path(image) , method: "delete" %></p>
+        </div >
+      <%end%>
+    </div>
+  </div>
 <h5>Upload a gif </h5>
 <%= render partial: "gifs_form" %>
 <div class = "cat-contain">
-    <h5>Giphs!</h5>
-<div class= "images-show">
-
-<%@gifs.each do |gif| %>
-<img src= "<%=gif.url%>">
-<% end %>
-</div>
+<h5>Giphs!</h5>
+  <div class= "categories-show">
+    <%@gifs.each do |gif| %>
+      <div class= "image-show">
+        <img src= "<%=gif.url%>">
+          <p><%=link_to "Delete", admin_gif_path(gif) , method: "delete" %></p>
+      </div>
+    <% end %>
+  </div>
 </div>

@@ -16,6 +16,7 @@ class UsersController < ApplicationController
 
   def show
     if current_user.id == params[:id].to_i
+      @gifs = Gif.all
       @images = Image.all
       @user = User.find(params[:id])
       @idea = @user.ideas.new
