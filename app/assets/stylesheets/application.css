@@ -2,8 +2,8 @@
 body {
   font-family: 'Lora', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   position: relative;
-  /* width: 100%; */
-  background: url("intro-bg.jpg") no-repeat center center fixed;
+  width: 100%;
+  background-image: url("intro-bg.jpg") no-repeat center center fixed;
   color: white;}
 
 html {
