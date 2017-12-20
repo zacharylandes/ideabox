@@ -1,36 +1,48 @@
 <nav>
   <h1>Welcome to the secret admin place</h1>
+  <%= link_to "Logout", root_path %>
 </nav>
 
-<div class= "container">
-<div class = "form-container">
-  <h3>Make a category </h3>
+
+<!-- <div class= "container"> -->
+  <h5>Make a category </h5>
 <%= render partial: "form" %>
-</div>
-<div class = "form-container">
-
-  <h3>Upload an image </h3>
-
-<%= render partial: "images_form" %>
-</div>
+<div class = "cat-contain">
+  <h5>Categories</h5>
 <div class= "categories-show">
-  <h3>Categories</h3>
-<%@categories.each do |category|%>
-<div class= "cat-show">
-  <p><%=category.name%></p>
-  <%= link_to "Edit", edit_admin_category_path(category) %>
-  <%= link_to "Delete", admin_category_path(category) , method: "delete" %>
+  <%@categories.each do |category|%>
+  <div class= "cat-show">
+    <p><%=category.name%></p>
+    <%= link_to "Edit", edit_admin_category_path(category) %>
+    <%= link_to "Delete", admin_category_path(category) , method: "delete" %>
+  </div>
+  <% end %>
 </div>
-<% end %>
 </div>
+  <h5>Upload an image </h5>
+<%= render partial: "images_form" %>
+
+
+<div class = "cat-contain">
+    <h5>Images</h5>
 <div class= "images-show">
 <% @images.each do |image| %>
 <div class= "image-show">
   <P><%= image.name %></P>
-  <%= image_tag image.image.url unless image.image.url.nil? %>
+  <p><%= image_tag image.image.url unless image.image.url.nil? %></p>
   <%=link_to "Delete", admin_image_path(image) , method: "delete" %></li>
 </div >
 <%end%>
 </div>
+</div>
+<h5>Upload a gif </h5>
+<%= render partial: "gifs_form" %>
+<div class = "cat-contain">
+    <h5>Giphs!</h5>
+<div class= "images-show">
 
+<%@gifs.each do |gif| %>
+<img src= "<%=gif.url%>">
+<% end %>
+</div>
 </div>

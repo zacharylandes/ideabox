@@ -1,5 +1,9 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+Giphy::Configuration.configure do |config|
+  config.version = "v1"
+  config.api_key = "nr9033gDTyqmod1PzCbYr5cKdImpnChU"
+end
 
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development

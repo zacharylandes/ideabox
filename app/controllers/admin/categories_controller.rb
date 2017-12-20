@@ -1,6 +1,9 @@
 class Admin::CategoriesController < Admin::BaseController
 
   def index
+    @gif = Gif.new
+    @gifs = Gif.all
+    # @gifs = Giphy.search(params[:name])
     @image = Image.new
     @images= Image.all
     @category= Category.new
@@ -18,7 +21,6 @@ class Admin::CategoriesController < Admin::BaseController
       redirect_to admin_categories_path
     else
     end
-    # end
   end
   def edit
     @category = Category.find(params[:id])

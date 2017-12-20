@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe "User visits categories index page" do
+describe "Admin visits categories index page" do
 
   it 'allows admin  to edit categories ' do
     admin = User.create(username: "fern@gully.com",

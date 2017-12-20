@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   def new
     @user = User.new
   end
@@ -14,14 +15,15 @@ class UsersController < ApplicationController
   end
 
   def show
-
-    @images = Image.all
-    # if User.find(params[:id]).logged_in
-    @user = User.find(params[:id])
-  # end
-    @idea = @user.ideas.new
-    @category = Category.all
-    @ideas =  Idea.where(:user_id => @user.id)
+    if current_user.id == params[:id].to_i
+      @images = Image.all
+      @user = User.find(params[:id])
+      @idea = @user.ideas.new
+      @category = Category.all
+      @ideas =  Idea.where(:user_id => @user.id)
+    else
+      render file: "/public/404"
+    end
   end
 
 private

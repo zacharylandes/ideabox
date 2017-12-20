@@ -6,9 +6,11 @@ Rails.application.routes.draw do
  end
    get '/login', as: 'login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
+  get '/logout', to: 'sessions#destroy'
 
     namespace :admin do
    resources :categories
+   resources :gifs
    resources :images
 end
 end

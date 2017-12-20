@@ -17,6 +17,11 @@ class SessionsController  < ApplicationController
   end
 end
 
+def destroy
+  session.clear
+  redirect_to root_path
+end
+
  def authenticate(unencrypted_password)
    BCrypt::Password.new(password_digest).is_password?(unencrypted_password) && self
  end

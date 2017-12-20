@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe "User visits categories index page" do
 
-  it 'allows admin  to edit categories ' do
+  it 'allows admin  to delete categories ' do
     admin = User.create(username: "fern@gully.com",
                         password: "password",
                         role: 1)

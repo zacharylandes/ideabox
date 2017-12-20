@@ -25,7 +25,6 @@ describe "User" do
 
       fill_in 'idea[title]', with: "New Idea"
       fill_in 'idea[description]', with: 'Sexy Daipers'
-      # save_and_open_page
 
       select "drama", :from => "idea[category_id]"
       select "first", :from => "idea[image_ids][]"
@@ -35,7 +34,6 @@ describe "User" do
       expect(current_path).to eq(user_path(user))
       expect(page).to have_content("Sexy Daipers")
       expect(page).to have_content("first")
-
     end
   end
 end
