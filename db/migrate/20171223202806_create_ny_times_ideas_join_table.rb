@@ -1,4 +1,4 @@
-class CreatenytimesIdeasJoinTable < ActiveRecord::Migration[5.1]
+class CreateNytimesIdeasJoinTable < ActiveRecord::Migration[5.1]
   def change
          create_join_table :ideas, :nytimes
   end
