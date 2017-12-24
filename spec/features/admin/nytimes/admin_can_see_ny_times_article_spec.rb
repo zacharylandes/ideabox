@@ -10,12 +10,12 @@ describe "admin can create Ny Times articles " do
       fill_in "nytime[title]", with: "humor"
       click_on ("Find Article")
 
-      expect(current_path).to eq(admin_nytimes_path)
+      expect(current_path).to eq(admin_categories_path)
 
       within(".image-show") do
         first('a').click
       end
-      
+
       expect(current_path).to eq(admin_nytime_path(Nytime.first))
       expect(page).to have_content("humor")
     end

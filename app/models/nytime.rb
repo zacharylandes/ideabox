@@ -7,7 +7,6 @@ require 'nokogiri'
 
 
 class Nytime < ApplicationRecord
-  belongs_to :user, optional: true
   has_and_belongs_to_many :ideas, :dependent => :destroy
 
     def self.nytimes(search)
@@ -27,11 +26,11 @@ class Nytime < ApplicationRecord
        @result = nytimes(search)['response']['docs'][0]['web_url']
        doc = Nokogiri::HTML(open("#{@result}"))
        doc= doc.css('p')
-      p doc.text.gsub(/[\r\n]+/,"\n").strip
+       doc.text.gsub(/[\r\n]+/,"\n").strip
     end
 
     def self.nytimes_title(search)
-      p nytimes(search)['response']['docs'][0]['headline']['main']
+       nytimes(search)['response']['docs'][0]['headline']['main']
     end
 
 

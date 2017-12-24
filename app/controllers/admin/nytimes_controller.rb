@@ -14,19 +14,19 @@ class Admin::NytimesController < ApplicationController
      title = Nytime.nytimes_title(ny_params[:title])
      @ny_time= Nytime.new(title: title, url: url)
      if @ny_time.save!
-        redirect_to admin_nytimes_path
+        redirect_to admin_categories_path
       end
   end
 
-def show
-  @article = Nytime.find(params[:id])
-end
+  def show
+    @article = Nytime.find(params[:id])
+  end
 
   def destroy
     nytime= Nytime.find(params[:id])
     nytime.destroy
     flash[:success] = "Article deleted!"
-    redirect_to admin_nytimes_path
+    redirect_to admin_categories_path
   end
 
 private
@@ -35,4 +35,4 @@ private
       params.require(:nytime).permit(:title)
   end
 
-  end
+end

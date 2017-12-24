@@ -48,3 +48,9 @@
 </div>
   <h5>Find a New York Times Article </h5>
   <%= render partial: "ny_form" %>
+  <%@nytimes.each  do |article| %>
+    <div class = 'image-show'>
+      <h4> <%= link_to "#{article.title}" , admin_nytime_path(article)%></h4>
+           <%= link_to "Delete", admin_nytime_path(article) , method: "delete" %>
+    </div>
+  <% end %>

@@ -12,11 +12,11 @@ describe "admin can delete Ny Times articles " do
 
       expect(Nytime.count).to eq(1)
 
-      expect(current_path).to eq(admin_nytimes_path)
+      expect(current_path).to eq(admin_categories_path)
 
       click_on "Delete"
 
-      expect(current_path).to eq(admin_nytimes_path)
+      expect(current_path).to eq(admin_categories_path)
       expect(Nytime.count).to eq(0)
     end
   end

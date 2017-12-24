@@ -1,5 +1,6 @@
 <nav>
   <h1><%= @article.title %></h1>
+  <%= link_to "Back to your Ideas", user_path(@user), class: "logout" %>
   <%= link_to "Logout", root_path, class: "logout" %>
 </nav>
 
