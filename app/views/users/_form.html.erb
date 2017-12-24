@@ -9,5 +9,7 @@
         <p><%= f.collection_select :image_ids, @images,:id,:name,{prompt: true}, {:multiple => true } %></p>
         <p><%= f.label :Gif %></p>
         <p><%= f.collection_select :gif_ids, @gifs,:id,:name,{prompt: true}, {:multiple => true } %></p>
+        <p><%= f.label :NY_Times_Article %></p>
+        <p><%= f.collection_select :nytime_ids, @nytimes,:id,:title,{prompt: true}%></p>
         <p><%= f.submit %></p>
       <% end %>

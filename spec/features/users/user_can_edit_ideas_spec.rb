@@ -3,7 +3,7 @@ require "rails_helper"
 describe "User visits user show  page" do
 
   it 'allows user  to edit ideas ' do
-     user = create(:user)
+    user = create(:user)
     humor = user.categories.create!(name:"humor")
     drama = user.categories.create!(name:"drama")
     idea = user.ideas.create(title:'idea',category_id: humor.id,user_id: user.id)
@@ -11,12 +11,13 @@ describe "User visits user show  page" do
     img1 = idea.images.create!(name:"second")
 
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+    # byebug
     visit  user_path(user)
 
-      fill_in 'idea[title]', with: "New Idea"
-      fill_in 'idea[description]', with: 'Sexy Daipers'
+    fill_in 'idea[title]', with: "New Idea"
+    fill_in 'idea[description]', with: 'Sexy Daipers'
 
-      select "drama", :from => "idea[category_id]"
+    select "drama", :from => "idea[category_id]"
 
     click_on 'Edit'
 

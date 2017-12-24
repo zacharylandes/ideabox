@@ -14,6 +14,7 @@ gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+gem 'rspotify'
 # gem 'GiphyClient'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -47,6 +48,8 @@ group :development, :test do
 end
 
 group :development do
+gem "times_wire", "~> 0.9.0"
+gem 'rest-client'
 gem 'bullet', group: 'development'
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'

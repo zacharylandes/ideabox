@@ -16,8 +16,8 @@
           <div class = "idea-text">
             <p> Idea: <%= idea.title  %></p>
             <p> <%= idea.description  %></p>
-            <p>Category: <%= idea.category.name  %></p>
-            <p><%= link_to "Edit", edit_user_idea_path(@user, idea) %></p>
+            <p>Category: <%= idea.category.name  unless idea.category.nil? %></p>
+            <p><%= link_to "Edit", edit_user_idea_path(@user,idea) %></p>
           </div>
           <%idea.images.each do |image| %>
             <div class = "idea-media">

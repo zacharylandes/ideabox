@@ -202,6 +202,15 @@ span{
   align-items: flex-start;
   margin:20px;
 }
+.art-container{
+  display: flex;
+  justify-content: center;
+text-align: center;
+}
+.article-show{
+  font-size: 10px;
+  width: 400px;
+}
 #welcome-container{
   width: 100px;
   position: absolute;

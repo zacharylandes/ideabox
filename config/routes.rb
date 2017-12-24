@@ -12,5 +12,7 @@ Rails.application.routes.draw do
    resources :categories
    resources :gifs
    resources :images
+   resources :nytimes
+
 end
 end

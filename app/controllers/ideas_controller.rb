@@ -1,5 +1,6 @@
 
 class IdeasController  < ApplicationController
+
     def new
           # byebug
       @image = Image.all
@@ -21,7 +22,6 @@ class IdeasController  < ApplicationController
       @category = Category.all
       @user = User.find(params[:user_id])
       @idea = Idea.find(params[:id])
-
     end
 
     def update
@@ -42,7 +42,7 @@ class IdeasController  < ApplicationController
     end
 
     def idea_params
-      params.require(:idea).permit(:title, :description, :category_id, {:image_ids =>[]},{:gif_ids =>[]})
+      params.require(:idea).permit(:title, :description, :category_id, {:image_ids =>[]},{:gif_ids =>[]}, {:nytime_ids=>[]})
     end
 
   end

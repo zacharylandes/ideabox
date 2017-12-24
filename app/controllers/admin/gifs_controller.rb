@@ -12,12 +12,6 @@ class Admin::GifsController < ApplicationController
         redirect_to admin_categories_path
       end
         end
-  #
-  # def show
-  #   # byebug
-  #   # @gif = Gif.find(params[:id])
-  #   render :show
-  # end
 
   def destroy
     @gif= Gif.find(params[:id])
@@ -29,7 +23,7 @@ class Admin::GifsController < ApplicationController
 private
 
   def gif_params
-      params.require(:gif).permit(:name,)
+      params.require(:gif).permit(:name)
   end
 
   end

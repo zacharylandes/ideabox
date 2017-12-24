@@ -3,7 +3,6 @@
   <%= link_to "Logout", root_path, class: "logout" %>
 </nav>
 
-
   <h5>Make a category </h5>
   <%= render partial: "form" %>
   <h5>Categories ></h5>
@@ -20,8 +19,6 @@
   </div>
   <h5>Upload an image </h5>
   <%= render partial: "images_form" %>
-
-
   <h5>Images ></h5>
   <div class = "cat-contain">
     <div class = "show-title">
@@ -49,3 +46,5 @@
     <% end %>
   </div>
 </div>
+  <h5>Find a New York Times Article </h5>
+  <%= render partial: "ny_form" %>

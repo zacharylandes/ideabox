@@ -1,0 +1,9 @@
+<div class = 'forms'>
+<%= form_for [:admin, @nytime]  do |f| %>
+  <div class="field">
+    <p><%= f.label :title %></p>
+    <P><%= f.text_field :title %></p>
+    <P><%= f.submit "Find Article" %></p>
+    </div>
+  <% end %>
+</div>

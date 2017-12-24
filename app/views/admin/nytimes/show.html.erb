@@ -1,0 +1,10 @@
+<nav>
+  <h1><%= @article.title %></h1>
+  <%= link_to "Logout", root_path, class: "logout" %>
+</nav>
+
+<div class="art-container">
+<div class = "article-show">
+  <%= @article.url %>
+</div>
+</div>
