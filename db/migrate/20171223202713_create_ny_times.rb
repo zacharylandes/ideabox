@@ -1,6 +1,6 @@
-class Createnytimes < ActiveRecord::Migration[5.1]
+class CreateNytimes < ActiveRecord::Migration[5.1]
   def change
-    create_table :ny_times do |t|
+    create_table :nytimes do |t|
       t.string :title
       t.string :url
     end
