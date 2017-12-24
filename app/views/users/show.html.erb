@@ -32,7 +32,8 @@
             </div>
           <% end %>
             <div class = "idea-media">
-              Article:<p><%= link_to "#{idea.nytimes.first.title}", user_idea_path(@user, idea)unless  idea.nytimes.empty?  %></p>
+            <p>  Article:</p>
+              <p><%= link_to "#{idea.nytimes.first.title}", user_idea_path(@user, idea)unless  idea.nytimes.empty?  %></p>
             </div>
           <p><%= link_to "Delete Idea", user_idea_path(@user, idea), method: "delete" %></p>
         </div>

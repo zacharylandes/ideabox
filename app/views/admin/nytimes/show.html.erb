@@ -1,6 +1,8 @@
 <nav>
   <h1><%= @article.title %></h1>
   <%= link_to "Logout", root_path, class: "logout" %>
+  <%= link_to "Back to your dashboard", admin_categories_path, class: "logout" %>
+
 </nav>
 
 <div class="art-container">
