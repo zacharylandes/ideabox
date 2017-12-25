@@ -11,7 +11,7 @@ class SessionsController  < ApplicationController
           session[:user_id] = user.id
           redirect_to user_path(user)
     else
-      flash[:notice] = "That user name is already taken"
+      flash[:notice] = "Invalid Credentials"
       render :new
     end
 end
