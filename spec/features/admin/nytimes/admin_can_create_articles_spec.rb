@@ -11,7 +11,6 @@ describe "admin can create Ny Times articles " do
       click_on ("Find Article")
 
       expect(current_path).to eq(admin_categories_path)
-
     end
   end
 end

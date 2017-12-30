@@ -22,7 +22,7 @@
   <h5>Images ></h5>
   <div class = "cat-contain">
     <div class = "show-title">
-</div>
+    </div>
     <div class= "categories-show">
       <% @images.each do |image| %>
         <div class= "image-show">
@@ -48,9 +48,11 @@
 </div>
   <h5>Find a New York Times Article </h5>
   <%= render partial: "ny_form" %>
+  <h5>Articles ></h5>
+
   <%@nytimes.each  do |article| %>
     <div class = 'image-show'>
-      <h4> <%= link_to "#{article.title}" , admin_nytime_path(article)%></h4>
+      <p> <%= link_to "#{article.title}" , admin_nytime_path(article)%></p>
            <%= link_to "Delete", admin_nytime_path(article) , method: "delete" %>
     </div>
   <% end %>

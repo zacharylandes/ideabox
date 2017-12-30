@@ -30,7 +30,7 @@ class Nytime < ApplicationRecord
     end
 
     def self.nytimes_title(search)
-       nytimes(search)['response']['docs'][0]['headline']['main']
+        nytimes(search)['response']['docs'][0]['headline']['main']
     end
 
 

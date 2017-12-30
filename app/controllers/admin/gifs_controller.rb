@@ -8,10 +8,10 @@ class Admin::GifsController < ApplicationController
   def create
      url = Giphy.search(gif_params[:name]).first.fixed_height_image.url
      @gifs= Gif.new(name: gif_params[:name], url: url)
-     if @gifs.save!
+      if @gifs.save!
         redirect_to admin_categories_path
       end
-        end
+  end
 
   def destroy
     @gif= Gif.find(params[:id])
@@ -26,4 +26,4 @@ private
       params.require(:gif).permit(:name)
   end
 
-  end
+end

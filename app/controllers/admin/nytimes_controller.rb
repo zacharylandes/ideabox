@@ -15,7 +15,7 @@ class Admin::NytimesController < ApplicationController
      @ny_time= Nytime.new(title: title, url: url)
      if @ny_time.save!
         redirect_to admin_categories_path
-      end
+     end
   end
 
   def show

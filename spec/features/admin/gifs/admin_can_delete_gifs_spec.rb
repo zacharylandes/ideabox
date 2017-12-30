@@ -9,13 +9,12 @@ describe "User visits categories index page" do
     fill_in "gif[name]", with: "burrito"
 
     click_on ("Create Gif")
-    
+
     expect(Gif.count).to eq(1)
 
     click_on 'Delete'
 
     expect(current_path).to eq(admin_categories_path)
     expect(Gif.count).to eq(0)
-
     end
 end

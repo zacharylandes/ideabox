@@ -12,7 +12,6 @@ describe "User logs in do" do
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
     visit  user_path(user)
 
-    # byebug
     visit user_path(2)
 
     expect(page).to have_content("doesn't exist")

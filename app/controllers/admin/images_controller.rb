@@ -33,4 +33,4 @@ private
       params.require(:image).permit(:name,:image)
   end
 
-  end
+end

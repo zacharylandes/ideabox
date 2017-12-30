@@ -2,7 +2,6 @@
 class IdeasController  < ApplicationController
 
     def new
-          # byebug
       @image = Image.all
       @user = User.find(params[:user_id])
       @idea = Idea.new
@@ -16,7 +15,6 @@ class IdeasController  < ApplicationController
       idea = user.ideas.create(ip)
         redirect_to user_path(user)
     end
-
 
     def show
       @user = User.find(params[:user_id])
