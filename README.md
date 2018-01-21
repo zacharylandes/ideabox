@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+IDEABOX
 
-Things you may want to cover:
+Idea box allows admin to create images, gifs, and search NY Times articles. It then allows users to create ideas and tag their ideas with the images, gifs, and articles that have been created by admin. 
 
-* Ruby version
+See it live here https://zach-landes-ideabox.herokuapp.com/
 
-* System dependencies
+Login as an admin.
+Username: "admin"
+password: "password"
 
-* Configuration
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
